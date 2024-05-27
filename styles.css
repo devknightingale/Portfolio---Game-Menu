@@ -1,0 +1,253 @@
+/* GENERAL RULES */ 
+:root { 
+    --black: #0b0c10; 
+    --darkblue: #1f2833; 
+    --blue: #45a29e;
+    --lightblue: #66fcf1;
+    --white: #c5c6c7; 
+}
+body { 
+    margin: 0; 
+    min-height: 100vh; 
+
+}
+
+/* FONT LIST: 
+Gugi, Arya, Staatliches, Press Start 2P, Inter, Figtree*/ 
+
+/* END GENERAL RULES */ 
+
+
+/* MAIN GRID AREA RULES */
+.grid-item-a {
+    background-color: black;
+    grid-area: header; 
+}
+
+/* This will be the main "splash art" area. */
+.grid-item-b { 
+    grid-area: main; 
+}
+
+/* This will be the main "menu" of the "game". AKA the navbar for navigating the website via the menu.*/ 
+.grid-item-c { 
+    grid-area: sidebar; 
+}
+
+.grid-item-d { 
+    background-color: black; 
+    grid-area: footer; 
+}
+
+.grid-container { 
+    min-height: 100vh; 
+    background-color: var(--darkblue); 
+    display: grid; 
+    grid-template-columns: 15% 15% 50% 5% 15%;
+    grid-template-rows: 5vh 2fr 0.12fr 0fr; 
+    grid-template-areas: 
+        "header header header header header"
+        ". sidebar main main ."
+        "footer footer footer footer footer";
+       
+}
+/* END MAIN GRID AREA RULES */
+
+/* SIDEBAR/MENU GRID AREA RULES */ 
+
+.menu-grid-container { 
+    min-height: 100%; 
+    display: grid; 
+    grid-template-columns: 100%; 
+    grid-template-rows: 1.5fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 1.5fr; 
+    grid-template-areas: 
+    "."
+    "menu-option-1"
+    "menu-option-2"
+    "menu-option-3"
+    "menu-option-4"
+    "menu-option-5"
+    ".";
+    row-gap: 5px; 
+
+}
+
+.menu-grid-item-a { 
+    /* background-color:blueviolet; */
+    grid-area: menu-option-1; 
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas:
+        ". . ."
+        "arrow button button"
+        ". . .";
+    
+}
+
+
+.menu-grid-item-b { 
+    grid-area: menu-option-2;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas:
+        ". . ."
+        ". button button"
+        ". . .";
+}
+.menu-grid-item-c { 
+    grid-area: menu-option-3; 
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas:
+        ". . ."
+        ". button button"
+        ". . .";
+}
+.menu-grid-item-d {
+    grid-area: menu-option-4;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas:
+        ". . ."
+        ". button button"
+        ". . .";
+}
+.menu-grid-item-e {
+    grid-area: menu-option-5; 
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas:
+        ". . ."
+        ". button button"
+        ". . .";
+}
+
+.menu-button { 
+    grid-area: button; 
+    background-color:var(--black);
+    border-style: solid none solid solid; 
+    border-width: 2px; 
+    border-color: black; 
+    box-shadow: -2px 2px var(--blue); 
+    font-family: "Press Start 2P", system-ui;
+    text-align: center; 
+    margin-top: -20px; 
+    
+    &:hover { 
+        border: 2px solid white; 
+        box-shadow: -2px 2px 2px 3px white; 
+        cursor: pointer;
+
+        &.menu-button > p {
+            font-size: 18px; 
+            color: white; 
+
+        }
+    }
+    
+}
+
+
+/* SPLASH ART GRID AREA RULES */ 
+
+.splash-grid-container { 
+    display: grid; 
+    height: 100%; 
+    grid-template-columns: 2fr 2fr 2fr 1fr; 
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr; 
+    grid-template-areas: 
+        ". . . ."
+        "splash splash splash ."
+        "splash splash splash ."
+        "splash splash splash ."
+        ". . . .";
+}
+
+.splash-grid-item { 
+    grid-area: splash; 
+    background-color: var(--black); 
+    border-style: solid; 
+    border-width: 2px; 
+    border-color: black; 
+    box-shadow: -3px 2px var(--blue); 
+    margin-left: 1px; 
+}
+
+/* MENU BUTTON TEXT */ 
+.menu-text { 
+    max-height: 10px; 
+    padding: 10px; 
+    margin-top: 3%;
+    margin-bottom: 5%; 
+    color: var(--lightblue);
+    font-size: 18px; 
+    font-family: "Gugi"; 
+}
+
+
+/* SPLASH INTERIOR GRID RULES */ 
+
+.splash-interior-grid-container { 
+    display: grid; 
+    height: 95%;
+    margin-right: 5%;  
+    margin-left: 5%; 
+    margin-top: 1.5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-areas:
+        "splash-item-a splash-item-a splash-item-a splash-item-a splash-item-a" 
+        "splash-item-b splash-item-b . splash-item-d splash-item-d"
+        "splash-item-b splash-item-b . splash-item-d splash-item-d"
+        "splash-item-c splash-item-c splash-item-c splash-item-d splash-item-d"
+        "splash-item-c splash-item-c splash-item-c splash-item-d splash-item-d";
+    
+}
+
+h1 {
+    color: white; 
+    font-family: "Arya";
+    font-size: 18px; 
+    text-align: center; 
+}
+
+.splash-interior-grid-item-a {
+    grid-area: splash-item-a; 
+
+    &.splash-interior-grid-item-a>h1 {
+        font-size: 28px; 
+        font-family: "Gugi";
+        color: var(--lightblue)
+    }
+
+    &.splash-interior-grid-item-a>h2 {
+        text-align: center; 
+        font-size: 16px; 
+        font-family: "Figtree"; 
+        color: var(--lightblue); 
+        margin-top: -15px; 
+    }
+}
+.splash-interior-grid-item-b {
+    grid-area: splash-item-b;
+    border-right-style: solid;
+    border-top-style: solid; 
+    border-width: 1px;
+}
+.splash-interior-grid-item-c {
+    grid-area: splash-item-c; 
+    border-width: 5px;
+    border-color: rgba(102, 252, 241, 0.6);
+}
+.splash-interior-grid-item-d {
+    grid-area: splash-item-d; 
+    border-right-style: solid;
+    border-top-style: solid; 
+    border-width: 1px;
+}
+
